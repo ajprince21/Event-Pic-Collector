@@ -85,17 +85,18 @@ const UploadPictureScreen = () => {
       <TextInput
         style={styles.input}
         placeholder="Enter Tag/Name"
+        placeholderTextColor={'grey'}
         value={tag}
         onChangeText={(text) => setTag(text)}
       />
 
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.button} onPress={selectPicture}>
-          <Text>Select Picture</Text>
+          <Text style={styles.buttonText}>Select Picture</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.button} onPress={handleUploadPicture}>
-          <Text>Upload Picture</Text>
+          <Text style={styles.buttonText}>Upload Picture</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -106,6 +107,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
+    backgroundColor:'#ffffff'
   },
   headerText: {
     fontSize: 18,
@@ -129,6 +131,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     marginBottom: 20,
     paddingLeft: 10,
+    color:'grey'
   },
   buttonContainer: {
     flexDirection: 'row',
@@ -140,6 +143,9 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 5,
   },
+  buttonText:{
+    color:'grey'
+  }
 });
 
 export default UploadPictureScreen;

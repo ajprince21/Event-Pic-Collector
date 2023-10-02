@@ -33,15 +33,12 @@ const LoginScreen = () => {
         // Validate email
         validateEmail();
 
-        // Check if the email is valid and password is not empty
         if (!emailError && password) {
-            // Set loading state to true during login request
             setLoading(true);
 
             try {
                 const response = await loginUser({ email, password });
                 if (response.status == 200) {
-                    // Store user data in AsyncStorage
                     await storeData(response.data);
                     dispatch(setUserData(response.data))
                     setLoginError('');
@@ -49,10 +46,8 @@ const LoginScreen = () => {
                     setLoginError(response.message || 'Login failed');
                 }
             } catch (error) {
-                // Handle other errors, such as network issues
                 setLoginError(error.message || 'Login failed');
             } finally {
-                // Set loading state to false after login request is complete
                 setLoading(false);
             }
         }
@@ -94,7 +89,7 @@ const LoginScreen = () => {
                 </Button>
             </View>
             <TouchableOpacity onPress={() => navigation.navigate('Registration')}>
-                <Text style={{ textAlign: 'center' }}>Don't have Account ? Sign UP </Text>
+                <Text style={{ textAlign: 'center', color:'grey' }}>Don't have Account ? Sign UP </Text>
             </TouchableOpacity>
         </View>
     );

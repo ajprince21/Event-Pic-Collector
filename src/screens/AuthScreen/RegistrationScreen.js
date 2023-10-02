@@ -86,6 +86,7 @@ const RegistrationScreen = () => {
       <TextInput
         style={styles.textInput}
         placeholder="Full Name"
+        placeholderTextColor='grey'
         value={userData.name}
         onChangeText={(text) => setUserData({ ...userData, name: text })}
       />
@@ -94,6 +95,7 @@ const RegistrationScreen = () => {
       )}
       <TextInput
         style={styles.textInput}
+        placeholderTextColor='grey'
         placeholder="Email"
         value={userData.email}
         onChangeText={(text) => setUserData({ ...userData, email: text })}
@@ -104,6 +106,7 @@ const RegistrationScreen = () => {
       )}
       <TextInput
         style={styles.textInput}
+        placeholderTextColor='grey'
         placeholder="Password"
         value={userData.password}
         onChangeText={(text) => setUserData({ ...userData, password: text })}
@@ -115,6 +118,7 @@ const RegistrationScreen = () => {
       <TouchableOpacity style={styles.button} onPress={handleRegistration}>
         <Text style={styles.buttonText}>Register</Text>
       </TouchableOpacity>
+      <Text onPress={()=> navigation.goBack()} style={{padding:15, color:'grey'}}>Already have Account ? Login </Text>
     </View>
   );
 };
@@ -124,12 +128,14 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     alignItems: 'center',
-    backgroundColor: '#fff', // Set background color to white
+    backgroundColor: '#fff',
   },
   heading: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
+    color:'grey'
+
   },
   textInput: {
     borderWidth: 1,
@@ -137,9 +143,10 @@ const styles = StyleSheet.create({
     padding: 10,
     marginBottom: 10,
     width: '100%',
+    color:'grey'
   },
   button: {
-    backgroundColor: 'tomato', // Set button color to tomato
+    backgroundColor: 'tomato', 
     padding: 15,
     borderRadius: 5,
     width: '100%',

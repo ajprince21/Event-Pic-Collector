@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, FlatList, Image } from 'react-native';
 import { getPictureList } from '../api/api';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
 
 const PicturesScreen = () => {
   const [pictures, setPictures] = useState([]);
 
-  useEffect(() => {
+  useFocusEffect(() => {
     getPictures();
-  }, []);
+  });
 
   const getPictures = async () => {
     try {
@@ -38,7 +39,7 @@ const PicturesScreen = () => {
         keyExtractor={(item) => item.id.toString()}
         renderItem={renderPictureItem}
         showsVerticalScrollIndicator={false}
-        ListEmptyComponent={<Text>No Images found. Please upload</Text>}
+        ListEmptyComponent={<Text style={{color:'grey'}}>No Images found. Please upload</Text>}
       />
     </View>
   );
@@ -48,6 +49,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
+    backgroundColor:'#ffffff'
   },
   headerText: {
     fontSize: 18,

@@ -34,7 +34,6 @@ const ProfileScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-
     padding: 16,
     backgroundColor: '#ffffff',
   },
@@ -48,10 +47,12 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 16,
+    color:'grey'
   },
   text: {
     fontSize: 16,
     marginBottom: 8,
+    color:'grey'
   },
   logoutButton: {
     marginTop: 20,
